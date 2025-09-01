@@ -165,3 +165,9 @@ input, textarea {
 input {
   height: auto !important;
 }
+
+/* Dropdown menu */
+
+.dropdown-menu.active {
+  display: block;
+}
