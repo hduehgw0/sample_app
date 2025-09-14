@@ -43,7 +43,7 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  host = 'bug-free-happiness-g4xj464g5p5c95qg.github.dev'
+  host = 'bug-free-happiness-g4xj464g5p5c95qg-3000.app.github.dev'
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   config.action_mailer.perform_caching = false
