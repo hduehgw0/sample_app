@@ -70,13 +70,19 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   host = 'https://sample-app-6p6i.onrender.com'
   config.action_mailer.default_url_options = { host: host }
-  ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => 'smtp.mailgun.org',
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'sandbox07d16271cf6249fe883a63f76ad7af69.mailgun.org',
-    :authentication => :plain,
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => 587,
+  #   :address        => 'smtp.mailgun.org',
+  #   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  #   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  #   :domain         => 'sandbox07d16271cf6249fe883a63f76ad7af69.mailgun.org',
+  #   :authentication => :plain,
+  # }
+
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV['MAILGUN_API_KEY'],
+    domain:  ENV['MAILGUN_DOMAIN']
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
