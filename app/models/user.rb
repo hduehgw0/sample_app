@@ -54,7 +54,6 @@ class User < ApplicationRecord
   def activate
     update_columns(activated: true, activated_at: Time.zone.now)
   end
-  end
 
   # 有効化用のメールを送信する
   def send_activation_email
